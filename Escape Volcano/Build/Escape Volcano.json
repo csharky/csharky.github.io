@@ -3,7 +3,7 @@
 "productName": "Escape Volcano",
 "productVersion": "1.0.2",
 "dataUrl": "Escape Volcano.data.unityweb",
-"wasmCodeUrl": "Escape Volcano.wasm",
+"wasmCodeUrl": "Escape Volcano.wasm.code.unityweb",
 "wasmFrameworkUrl": "Escape Volcano.wasm.framework.unityweb",
 "graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
 "webglContextAttributes": {"preserveDrawingBuffer": false},
