@@ -1,0 +1,17 @@
+{
+"companyName": "CSHDWSH",
+"productName": "Escape Volcano",
+"productVersion": "1.0.2",
+"dataUrl": "e27a62997a28734bb8c63d0fcb9e6283.unityweb",
+"wasmCodeUrl": "72e0a4aaf7fe91d68e90516495bcc8da.unityweb",
+"wasmFrameworkUrl": "c9833e0a809ffa321976bdf71cae9da5.unityweb",
+"wasmSymbolsUrl": "739349ae93e476281000f42ac5e18e50.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.9f1"
+}
