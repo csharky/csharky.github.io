@@ -6,8 +6,9 @@ bridge.send("VKWebAppInit", {});
 
 function vkRecordPlayerScore(score)
 {
-    console.log("wassup");ы
-    /*bridge.send("VKWebAppShowLeaderBoardBox", {user_result:score})
+    bridge.send("VKWebAppShowLeaderBoardBox", {user_result:score})
          .then(data => console.log(data.success))
-        .catch(error => console.log(error));*/
+        .catch(error => console.log(error));
 }
+
+window.vkRecordPlayerScore = vkRecordPlayerScore;
