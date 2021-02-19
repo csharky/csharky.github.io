@@ -1,5 +1,7 @@
 import bridge from '@vkontakte/vk-bridge';
 
+console.log("test");
+
 bridge.send("VKWebAppInit", {});
 
 function vkRecordPlayerScore(score)
