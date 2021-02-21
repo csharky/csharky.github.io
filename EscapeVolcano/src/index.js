@@ -3,8 +3,6 @@ import UrlParser from './UrlParser'
 
 bridge.send("VKWebAppInit", {});
 
-alert(UnityLoader.SystemInfo.browser);
-
 function vkRecordPlayerScore(score)
 {
     const parser = new UrlParser();
