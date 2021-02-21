@@ -26,7 +26,9 @@ function vkRecordPlayerScore(score)
         })
         .then(data => console.log(data.success))
         .catch(error => console.log(error));
-    } catch (e) {}
+    } catch (e) {
+        console.log(e);
+    }
 
     bridge.send("VKWebAppShowLeaderBoardBox", {user_result:score})
          .then(data => console.log(data.success))
