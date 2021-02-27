@@ -35,4 +35,22 @@ function vkRecordPlayerScore(score)
         .catch(error => console.log(error));
 }
 
+function vkGetUserId()
+{
+    const parser = new UrlParser();
+    parser.parseUri();
+
+    try {
+        const access_token = parser.getParam('access_token');
+        const user_id = parser.getParam('viewer_id');
+
+        return user_id;
+    } catch (e) {
+        console.log(e);
+    }
+
+    return null;
+}
+
 window.vkRecordPlayerScore = vkRecordPlayerScore;
+window.vkGetUserId = vkGetUserId;
