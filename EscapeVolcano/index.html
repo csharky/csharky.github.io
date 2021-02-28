@@ -20,32 +20,27 @@
   
       var user_id = window.vkGetUserId();   // user's id
       var app_id = 7764201;  // your app's id
-  
-      admanInit({
-        user_id: user_id,
-        app_id: 7764201,
-        type: 'preloader',      // 'preloader' or 'rewarded' (default - 'preloader')
-        params: {preview: 1}   // to verify the correct operation of advertising
-      }, onAdsReady, onNoAds);
-
-      var someshit = null;
-  
-      function onAdsReady(adman) {
-        adman.onStarted(function () {});
-        adman.onCompleted(function() {});          
-        adman.onSkipped(function() {});          
-        adman.onClicked(function() {});
-        someshit = adman;
-      };
-      function onNoAds() {};
 
       function vkShowAds()
       {
-        if (someshit !== null)
-        {
-          someshit.start('after_5_death');
+        admanInit({
+          user_id: user_id,
+          app_id: 7764201,
+          type: 'preloader',      // 'preloader' or 'rewarded' (default - 'preloader')
+          params: {preview: 1}   // to verify the correct operation of advertising
+        }, onAdsReady, onNoAds);
+
+        var someshit = null;
+    
+        function onAdsReady(adman) {
+          adman.onStarted(function () {});
+          adman.onCompleted(function() {});          
+          adman.onSkipped(function() {});          
+          adman.onClicked(function() {});
+          adman.start("after_5_death");
+        };
+        function onNoAds() {};
         }
-      }
 
       window.vkShowAds = vkShowAds;
     });
