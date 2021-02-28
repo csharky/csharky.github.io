@@ -24,6 +24,8 @@
 
       function vkShowAds()
       {
+        console.log("UserId: ");
+        console.log(user_id);
         admanInit({
           user_id: user_id,
           app_id: 7764201,
@@ -35,10 +37,18 @@
         var someshit = null;
     
         function onAdsReady(adman) {
-          adman.onStarted(function () {});
-          adman.onCompleted(function() {});          
-          adman.onSkipped(function() {});          
-          adman.onClicked(function() {});
+          adman.onStarted(function () {
+            console.log("ads started");
+          });
+          adman.onCompleted(function() {
+            console.log("ads completed");
+          });          
+          adman.onSkipped(function() {
+            console.log("ads skipped");
+          });          
+          adman.onClicked(function() {
+            console.log("ads clicked");
+          });
           adman.start("after_5_death");
         };
         function onNoAds() {
