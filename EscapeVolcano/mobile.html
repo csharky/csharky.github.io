@@ -11,6 +11,43 @@
   </head>
   <body style="margin: 0px;">
     <div id="unityContainer" style="width: 100%; height: 100vh;  margin: auto"></div>
-  <script src="dist/main.js"></script>
+    <script type="text/javascript" src="//vk.com/js/api/xd_connection.js?2" charset="utf-8"></script>
+    <script type="text/javascript" src="//ad.mail.ru/static/admanhtml/rbadman-html5.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="//vk.com/js/api/adman_init.js" charset="utf-8"></script>
+  <script src="dist/main.js">
+  </script>
+  <script>
+    window.addEventListener('load', function() {
+  
+      var user_id = window.vkGetUserId();   // user's id
+      var app_id = 7764201;  // your app's id
+
+      function vkShowAds()
+      {
+        admanInit({
+          user_id: user_id,
+          app_id: 7764201,
+          mobile: true,
+          type: 'preloader',      // 'preloader' or 'rewarded' (default - 'preloader')
+          params: {preview: 1}   // to verify the correct operation of advertising
+        }, onAdsReady, onNoAds);
+
+        var someshit = null;
+    
+        function onAdsReady(adman) {
+          adman.onStarted(function () {});
+          adman.onCompleted(function() {});          
+          adman.onSkipped(function() {});          
+          adman.onClicked(function() {});
+          adman.start("after_5_death");
+        };
+        function onNoAds() {
+          console.log("ads not available");
+        };
+        }
+
+      window.vkShowAds = vkShowAds;
+    });
+  </script>
   </body>
 </html>
