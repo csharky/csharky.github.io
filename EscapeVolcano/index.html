@@ -16,8 +16,6 @@
     <div id="unityContainer" style="width: 100vw; height: 100vh; max-width: 700px; max-height: 960px; margin: auto"></div>
   <script src="dist/main.js"></script>
   <script>
-    window.addEventListener('load', function() {
-  
       var user_id = window.vkGetUserId();   // user's id
       var app_id = 7764201;  // your app's id
 
@@ -33,11 +31,20 @@
         var someshit = null;
     
         function onAdsReady(adman) {
-          adman.onStarted(function () {});
-          adman.onCompleted(function() {});          
-          adman.onSkipped(function() {});          
-          adman.onClicked(function() {});
+          adman.onStarted(function () {
+            console.log("on ads started");
+          });
+          adman.onCompleted(function() {
+            console.log("on ads completed");
+          });          
+          adman.onSkipped(function() {
+            console.log("on ads skipped");
+          });          
+          adman.onClicked(function() {
+            console.log("on ads clicked");
+          });
           adman.start("after_5_death");
+          console.log("on ads ready");
         };
         function onNoAds() {
           console.log("ads not available");
@@ -45,6 +52,5 @@
         }
 
       window.vkShowAds = vkShowAds;
-    });
   </script></body>
 </html>
