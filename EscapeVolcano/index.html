@@ -27,18 +27,24 @@
         type: 'preloader',      // 'preloader' or 'rewarded' (default - 'preloader')
         params: {preview: 1}   // to verify the correct operation of advertising
       }, onAdsReady, onNoAds);
+
+      var someshit = null;
   
       function onAdsReady(adman) {
         adman.onStarted(function () {});
         adman.onCompleted(function() {});          
         adman.onSkipped(function() {});          
         adman.onClicked(function() {});
+        someshit = adman;
       };
       function onNoAds() {};
 
       function vkShowAds()
       {
-        adman.start('after_5_death');
+        if (someshit !== null)
+        {
+          someshit.start('after_5_death');
+        }
       }
 
       window.vkShowAds = vkShowAds;
