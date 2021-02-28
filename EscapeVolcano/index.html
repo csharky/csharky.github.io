@@ -11,5 +11,37 @@
   </head>
   <body style="margin: 0px;">
     <div id="unityContainer" style="width: 100vw; height: 100vh; max-width: 700px; max-height: 960px; margin: auto"></div>
-  <script src="main.js"></script></body>
+  <script src="dist/main.js"></script>
+  <script type="text/javascript" src="//vk.com/js/api/xd_connection.js?2" charset="utf-8"></script>
+  <script type="text/javascript" src="//ad.mail.ru/static/admanhtml/rbadman-html5.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="//vk.com/js/api/adman_init.js" charset="utf-8"></script>
+  <script>
+    window.addEventListener('load', function() {
+  
+      var user_id = window.vkGetUserId();   // user's id
+      var app_id = 7764201;  // your app's id
+  
+      admanInit({
+        user_id: user_id,
+        app_id: 7764201,
+        type: 'preloader',      // 'preloader' or 'rewarded' (default - 'preloader')
+        params: {preview: 1}   // to verify the correct operation of advertising
+      }, onAdsReady, onNoAds);
+  
+      function onAdsReady(adman) {
+        adman.onStarted(function () {});
+        adman.onCompleted(function() {});          
+        adman.onSkipped(function() {});          
+        adman.onClicked(function() {});
+      };
+      function onNoAds() {};
+
+      function vkShowAds()
+      {
+        adman.start('after_5_death');
+      }
+
+      window.vkShowAds = vkShowAds;
+    });
+  </script></body>
 </html>
