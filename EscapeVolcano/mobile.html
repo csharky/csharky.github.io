@@ -36,10 +36,12 @@
       };
       function onNoAds() {};
 
-      window.vkShowAds = function()
+      function vkShowAds()
       {
         adman.start('after_5_death');
       }
+
+      window.vkShowAds = vkShowAds;
     });
   </script>
   </body>
